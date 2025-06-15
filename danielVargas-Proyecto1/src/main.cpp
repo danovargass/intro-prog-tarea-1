@@ -78,7 +78,9 @@ class MenuPrincipal {
             stringstream ss(numero_ingresado);
             if (ss >> valor_numerico && valor_numerico >= rango_minimo && valor_numerico <= rango_maximo)
                 return valor_numerico;
-            cout << "Opción inválida, vuelva a intentarlo" << endl;
+            cout << "\n--------------------------------\n"  
+                 << "Opción inválida o vacía, vuelva a intentarlo\n"
+                 << "--------------------------------\n" << endl;
         }
     }
 
@@ -134,7 +136,7 @@ public:
         }
         int max_tareas_permitidas = 5 - lista_de_tareas.size();
         int numero_ingresado_por_usuario = numero_entero_en_rango("Ingrese la cantidad de tareas que desea agregar: ", 1, max_tareas_permitidas);
-
+        
         for (int i = 0; i < numero_ingresado_por_usuario; ++i) {
             // solicita al usuario el codigo de la tarea y asegura que sea unico y valido
             cout << "Número de código tarea " << (i+1) << " (4 dígitos): ";
@@ -199,7 +201,9 @@ public:
     // controlador de la opcion "Buscar Tarea" del menu
     void buscar_tarea() {
         if (lista_de_tareas.empty()) {
-            cout << "Debe ingresar primero la tarea" << endl;
+            cout << "\n--------------------------------\n"
+                 << "Debe ingresar primero la tarea\n"
+                 << "--------------------------------\n" << endl;
             return;
         }
         string codigo_de_tarea;
@@ -250,7 +254,9 @@ public:
     // controlador de la opcion "Eliminar Tarea" del menu
     void eliminar_tarea() {
         if (lista_de_tareas.empty()) {
-            cout << "Debe ingresar primero la tarea" << endl;
+            cout << "\n--------------------------------\n"
+                 << "Debe ingresar primero la tarea\n"
+                 << "--------------------------------\n" << endl;
             return;
         }
 
